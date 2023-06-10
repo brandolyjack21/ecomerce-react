@@ -5,3 +5,4 @@ const getconfig = () => {
         }
     }
 }
+export default getconfig
