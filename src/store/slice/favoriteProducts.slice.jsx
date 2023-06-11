@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { viewLoading } from "./isLoading.slice"
 import axios from 'axios'
-import getConfig from "../../utils/getConfig"
+import getConfig from '../../utils/getConfig'
 
 export const favoriteProduct = createSlice({
     name: 'favoriteProduct',
