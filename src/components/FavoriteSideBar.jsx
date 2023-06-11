@@ -16,13 +16,13 @@ function FavoriteSideBar() {
 
     
     const [show, setShow] = useState(false);
-    const token = localStorage.getItem('token')
     const navigate = useNavigate()
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleCanva = () => {
       
+      const token = localStorage.getItem('token')
       if (token) {
         handleShow()
       }else{
