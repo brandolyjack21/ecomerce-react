@@ -8,6 +8,8 @@ import '../pages/productDetail.css'
 import { categoryFilterThunk } from '../store/slice/products.slice'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { addCardThunk } from '../store/slice/favoriteProducts.slice'
+import { productDetailOne } from '../store/slice/productDetail.slice'
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -30,6 +32,16 @@ function ProductDetail() {
     .catch(error => console.error(error))
   }, [])
 
+  const addToProduct = () => {
+    console.log(countProduct, productDetail.id, 'este es la prueba definitiva');
+    const product = {
+      quantity: countProduct,
+      productId: productDetail.id
+
+    }
+    dispatch(addCardThunk(product))
+  }
+
   console.log(productDetail, 'este es el product detail');
   return (
     <div>
@@ -48,7 +60,9 @@ function ProductDetail() {
                     <div>{countProduct}</div>
                     <button onClick={() => setCountProduct(countProduct + 1)}>+</button>
                 </div>
-                <button className='button--card'>añadir al carrito</button>
+                <button className='button--card'
+                onClick={addToProduct}
+                >añadir al carrito</button>
             </div>
         </div>
         <div>

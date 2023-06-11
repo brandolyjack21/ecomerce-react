@@ -1,8 +1,8 @@
-const getconfig = () => {
-    {
+const getConfig = () => {
+   return {
         headers:{
-           Autorization: `Bearer ${localStorage.getItem('token')}`
+           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }
 }
-export default getconfig
+export default getConfig
